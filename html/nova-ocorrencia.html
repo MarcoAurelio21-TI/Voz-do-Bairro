@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Nova Ocorrência — Voz do Bairro</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>document.documentElement.classList.add('js');</script>
+    <link rel="stylesheet" href="../styles/nova-ocorrencia.css?v=11">
+</head>
+<body>
+
+    <div class="blobs-decor" aria-hidden="true">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+        <div class="blob blob-4"></div>
+    </div>
+
+    <div class="scroll-progresso" id="scroll-progresso"></div>
+
+    <div class="janela-sistema">
+
+        <header class="topo-simplificado">
+            <div class="btn-voltar-container anim-entrada anim-de-cima delay-1">
+                <a href="../index.html" class="btn-voltar">
+                    <i class="fa-solid fa-house"></i> Voltar ao Início
+                </a>
+            </div>
+
+            <div class="logo-container anim-entrada anim-de-cima delay-1">
+                <div class="brasao" title="Voltar ao Início" role="button" tabindex="0"
+                     onclick="window.location.href='../index.html'"
+                     onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.location.href='../index.html';}">
+                    <img src="../img/logo.png" alt="Brasão Voz do Bairro" onerror="this.style.display='none'">
+                </div>
+                <div class="logo-texto">
+                    <h1>Voz do Bairro</h1>
+                </div>
+            </div>
+        </header>
+
+        <div class="linha-preta"></div>
+
+        <main class="conteudo-principal form-wrapper">
+
+            <div class="page-title-area anim-entrada anim-de-cima delay-2">
+                <h2 class="titulo-pagina">Registrar Nova Ocorrência.</h2>
+                <p class="subtitulo-pagina">Relate problemas, alertas ou pedidos de ajuda no bairro. Com o seu cadastro, sua voz é ouvida.</p>
+            </div>
+
+            <div class="form-container anim-entrada anim-de-baixo delay-3">
+                <form action="#" method="POST" id="form-ocorrencia" novalidate>
+
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="titulo">Título da Ocorrência <span class="required">*</span></label>
+                            <input type="text" id="titulo" name="titulo" maxlength="120"
+                                   placeholder="Ex: Buraco grande na Rua das Acácias" required>
+                            <span class="erro-msg" data-erro="titulo"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="categoria">Categoria <span class="required">*</span></label>
+                            <select id="categoria" name="categoria" required>
+                                <option value="" disabled selected>Selecione uma categoria</option>
+                                <option value="alertas">Alertas</option>
+                                <option value="seguranca">Segurança</option>
+                                <option value="animais">Animais</option>
+                                <option value="obras">Obras e Serviços</option>
+                                <option value="outros">Outros</option>
+                            </select>
+                            <span class="erro-msg" data-erro="categoria"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="endereco">Endereço / Localização <span class="required">*</span></label>
+                            <input type="text" id="endereco" name="endereco" maxlength="160"
+                                   placeholder="Ex: Próximo à praça da igreja" required>
+                            <span class="erro-msg" data-erro="endereco"></span>
+                        </div>
+
+                        <!-- Nome e Contato para a pessoa digitar -->
+                        <div class="form-group" id="grupo-nome">
+                            <label for="nome">Seu Nome (opcional)</label>
+                            <input type="text" id="nome" name="nome" maxlength="80"
+                                   placeholder="Ex: João da Silva">
+                        </div>
+
+                        <div class="form-group full-width" id="grupo-contato">
+                            <label for="contato">Seu Contato (Telefone, WhatsApp ou E-mail) (opcional)</label>
+                            <input type="text" id="contato" name="contato" maxlength="80"
+                                   placeholder="Ex: (11) 99999-9999 ou joao@email.com">
+                        </div>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="imagem">Foto da Ocorrência (opcional)</label>
+                        <div class="upload-container" id="upload-container">
+                            <input type="file" id="imagem" name="imagem" accept="image/*" hidden>
+                            <div class="upload-placeholder" id="upload-placeholder">
+                                <i class="fa-solid fa-cloud-arrow-up"></i>
+                                <p>Clique ou arraste uma imagem para cá</p>
+                                <span>Formatos aceitos: JPG, PNG (Max 5MB)</span>
+                            </div>
+                            <div class="preview-container" id="preview-container" hidden>
+                                <img src="" alt="Pré-visualização" id="preview-imagem">
+                                <button type="button" class="btn-remover-img" id="btn-remover-img" title="Remover imagem">
+                                    <i class="fa-solid fa-xmark"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="descricao">Descrição detalhada <span class="required">*</span></label>
+                        <textarea id="descricao" name="descricao" rows="6" maxlength="800"
+                                  placeholder="Descreva o que aconteceu, pontos de referências e detalhes importantes..." required></textarea>
+                        <div class="contador"><span id="contador-desc">0</span>/800</div>
+                        <span class="erro-msg" data-erro="descricao"></span>
+                    </div>
+
+                    <div class="form-footer">
+                        <div class="footer-text">
+                            <p>• Quer enviar sua ocorrência diretamente para a prefeitura? Faça um e-mail com todas informações deste formulário e envie para: <strong>ogm@prefeitura.sp.gov.br</strong></p>
+                            <p>• Campos com "<strong>*</strong>" são obrigatórios</p>
+                        </div>
+
+                        <div class="footer-actions">
+                            <button type="submit" class="btn-enviar">
+                                <span class="btn-texto">Enviar ocorrência</span>
+                                <span class="btn-loading" aria-hidden="true"><i class="fa-solid fa-spinner fa-spin"></i></span>
+                            </button>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="anonimo"> Enviar anonimamente (esconder meu nome e contato)
+                            </label>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+        </main>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="../js/nova-ocorrencia.js?v=7"></script>
+</body>
+</html>

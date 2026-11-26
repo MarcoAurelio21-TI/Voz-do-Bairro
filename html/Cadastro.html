@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="view-transition" content="same-origin">
+  <title>Criar Conta - Voz do Bairro</title>
+  <link rel="icon" type="image/x-icon" href="../img/logo.png"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Adicionada a fonte Merriweather e removida a UnifrakturMaguntia -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/Cadastro.css?v=4">
+</head>
+<body>
+  <!-- Botão de Voltar ao Início -->
+  <a href="../index.html" class="btn-voltar" title="Voltar ao início">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+      <path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z"/>
+    </svg>
+    Voltar ao Início
+  </a>
+
+  <main class="container">
+    <!-- Área da Logo com Animação -->
+    <div class="logo-area">
+      <img src="../img/logo.png?v=3" alt="Logo Voz do Bairro" class="logo">
+    </div>
+
+    <section class="card">
+      <h1 class="titulo">Criar conta</h1>
+      <p class="subtitulo">É rapidinho e gratuito.</p>
+
+      <form class="formulario" action="#" method="POST">
+        <div class="campo">
+          <label for="nome">Nome completo</label>
+          <input type="text" id="nome" name="nome" required>
+        </div>
+
+        <div class="campo">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="campo">
+          <label for="senha">Senha</label>
+          <input type="password" id="senha" name="senha" required>
+        </div>
+
+        <div class="campo">
+          <label for="confirmar-senha">Confirmar senha</label>
+          <input type="password" id="confirmar-senha" name="confirmar-senha" required>
+        </div>
+
+        <button type="submit" class="btn-principal">Cadastrar</button>
+      </form>
+
+      <p class="rodape-link">
+        Já tem conta? <a href="Login.html">Entrar!</a>
+      </p>
+    </section>
+  </main>
+</body>
+</html>

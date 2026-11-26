@@ -1,0 +1,245 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  margin: 0;
+  overflow: hidden;
+  background-color: #0f172a; /* Cor de fundo fallback caso a imagem falhe */
+  z-index: 0; /* Cria contexto de empilhamento */
+}
+
+/* Camada do fundo com a imagem */
+body::before {
+  content: "";
+  position: fixed; /* Fixed garante que não role se a tela for pequena */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../img/img4.jpeg'); 
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  /* Blur para desfocar + Brightness para escurecer e dar contraste */
+  filter: blur(4px) brightness(0.6); 
+  transform: scale(1.05); /* Evita bordas brancas por causa do blur */
+  z-index: -1; /* Joga a imagem para trás de tudo */
+}
+
+.container {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+}
+
+.logo-area {
+  margin-bottom: 20px;
+}
+
+/* Animação de flutuar da logo */
+@keyframes flutuarLogo {
+  0%, 100% { 
+    transform: translateY(0px); 
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));
+  }
+  50% { 
+    transform: translateY(-12px); 
+    filter: drop-shadow(0 15px 20px rgba(0,0,0,0.5)); 
+  }
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+  display: block;
+  /* Aplica a animação */
+  animation: flutuarLogo 4s ease-in-out infinite;
+}
+
+/* Animação de entrada do Card */
+@keyframes subirCard {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 36px 32px;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  animation: subirCard 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* =========================================
+   TÍTULO ATUALIZADO (Merriweather)
+   ========================================= */
+.titulo {
+  font-family: 'Merriweather', serif;
+  font-size: 1.7rem;
+  color: #0f172a;
+  font-weight: 700; /* Fonte mais robusta igual à logo */
+  margin-bottom: 6px;
+  letter-spacing: -0.5px;
+}
+
+.subtitulo {
+  font-size: 0.85rem;
+  color: #666666;
+  margin-bottom: 24px;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  text-align: left;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.campo label {
+  font-size: 0.85rem;
+  color: #222222;
+  font-weight: 500;
+}
+
+.campo input {
+  width: 100%;
+  padding: 12px 14px;
+  background-color: #f7f7f7;
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.campo input::placeholder {
+  color: #999999;
+}
+
+.campo input:focus {
+  border-color: #c81414;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(200, 20, 20, 0.1);
+}
+
+.btn-principal {
+  margin-top: 10px;
+  width: 100%;
+  padding: 13px;
+  background-color: #c81414;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(200, 20, 20, 0.25);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-principal::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn-principal:hover {
+  background-color: #a81010;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(200, 20, 20, 0.4);
+}
+
+.btn-principal:hover::after {
+  left: 100%;
+}
+
+.rodape-link {
+  margin-top: 20px;
+  font-size: 0.82rem;
+  color: #666666;
+}
+
+.rodape-link a {
+  color: #c81414;
+  font-weight: 600;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.rodape-link a:hover {
+  color: #a81010;
+}
+
+/* =========================================
+   BOTÃO VOLTAR AO INÍCIO
+   ========================================= */
+.btn-voltar {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background-color: #f8fafc;
+  color: #1e293b;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.btn-voltar svg {
+  color: #475569;
+  transition: color 0.2s ease;
+}
+
+.btn-voltar:hover {
+  background-color: #ffffff;
+  color: #c81414;
+  border-color: #cbd5e1;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.btn-voltar:hover svg {
+  color: #c81414;
+}

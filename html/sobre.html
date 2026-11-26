@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conheça a história, missão e valores do Voz do Bairro — a plataforma que conecta vizinhos e transforma comunidades.">
+    <title>Sobre Nós — Voz do Bairro</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>document.documentElement.classList.add('js');</script>
+    <link rel="stylesheet" href="../styles/sobre.css?v=7">
+</head>
+<body>
+
+    <!-- Blobs decorativos -->
+    <div class="blobs-decor" aria-hidden="true">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+        <div class="blob blob-4"></div>
+    </div>
+
+    <!-- Barra de progresso -->
+    <div class="scroll-progresso" id="scroll-progresso"></div>
+
+    <!-- ===================== JANELA PRINCIPAL ===================== -->
+    <div class="janela-sistema">
+
+        <!-- HEADER -->
+        <header class="topo">
+            <div class="logo-container">
+                <div class="brasao" title="Voltar ao Início" onclick="window.location.href='../index.html'">
+                    <img src="../img/logo.png" alt="Brasão Voz do Bairro" onerror="this.style.display='none'">
+                </div>
+                <div class="logo-texto">
+                    <h1>Voz do Bairro</h1>
+                    <p>ocorrências, notícias e alertas de vizinhança</p>
+                </div>
+            </div>
+
+            <div class="botoes-topo">
+                <a href="login.html" class="btn-entrar" data-magnetic>ENTRAR</a>
+                <a href="nova-ocorrencia.html" class="btn-registrar-topo pulse-btn" data-magnetic>REGISTRAR OCORRÊNCIA</a>
+            </div>
+        </header>
+
+        <div class="linha-preta"></div>
+
+        <!-- MENU -->
+        <nav class="menu">
+            <ul>
+                <li><a href="../index.html" class="menu-link"><span class="text-front">Início</span><span class="text-back">Início</span></a></li>
+                <li><a href="noticias.html" class="menu-link"><span class="text-front">Notícias</span><span class="text-back">Notícias</span></a></li>
+                <li><a href="ocorrencias.html" class="menu-link"><span class="text-front">Ocorrências</span><span class="text-back">Ocorrências</span></a></li>
+                <li><a href="acompanhamento.html" class="menu-link"><span class="text-front">Acompanhamento</span><span class="text-back">Acompanhamento</span></a></li>
+                <li><a href="sobre.html" class="menu-link active"><span class="text-front">Sobre Nós</span><span class="text-back">Sobre Nós</span></a></li>
+            </ul>
+        </nav>
+
+        <div class="linha-preta"></div>
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <main class="conteudo-principal">
+
+            <!-- HERO SOBRE -->
+            <section class="hero-sobre hero-section">
+                <div class="coluna-texto">
+                    <span class="tag anim-entrada anim-de-baixo delay-1">Nossa Essência</span>
+                    <h2 class="titulo-principal anim-entrada anim-de-baixo delay-2">
+                        A voz que transforma o<br>
+                        <span class="texto-vermelho">nosso bairro</span>.
+                    </h2>
+                    <p class="descricao anim-entrada anim-de-baixo delay-3">
+                        Nascemos para conectar vizinhos e resolver problemas. Acreditamos que a comunicação é o primeiro passo para construir uma comunidade mais segura, unida e feliz.
+                    </p>
+                    <div class="botoes-acao anim-entrada anim-de-baixo delay-4">
+                        <a href="nova-ocorrencia.html" class="btn-abrir-mural" data-magnetic>Registrar Ocorrência &rarr;</a>
+                        <a href="#nossa-historia" class="btn-entrar" style="padding: 12px 24px; font-size: 14px;" data-magnetic>Conhecer a História</a>
+                    </div>
+                </div>
+                <div class="coluna-imagem anim-entrada-imagem">
+                    <figure class="polaroid" data-tilt data-tilt-strength="10">
+                        <img src="../img/img10t.png" alt="Comunidade" onerror="this.src='https://via.placeholder.com/600x400?text=Nossa+Historia'">
+                        <figcaption class="polaroid-legenda">conectando vizinhos, transformando realidades</figcaption>
+                        <span class="card-brilho"></span>
+                    </figure>
+                </div>
+            </section>
+
+            <!-- NÚMEROS / ESTATÍSTICAS -->
+            <section class="secao-numeros anim-entrada anim-de-baixo delay-1">
+                <div class="grid-numeros">
+                    <div class="numero-card" data-tilt data-tilt-strength="8">
+                        <div class="numero-valor" data-contador="1284">0</div>
+                        <div class="numero-label">Ocorrências registradas</div>
+                        <span class="card-brilho"></span>
+                    </div>
+                    <div class="numero-card" data-tilt data-tilt-strength="8">
+                        <div class="numero-valor" data-contador="947" data-sufixo="+">0</div>
+                        <div class="numero-label">Casos resolvidos</div>
+                        <span class="card-brilho"></span>
+                    </div>
+                    <div class="numero-card" data-tilt data-tilt-strength="8">
+                        <div class="numero-valor" data-contador="512">0</div>
+                        <div class="numero-label">Vizinhos cadastrados</div>
+                        <span class="card-brilho"></span>
+                    </div>
+                    <div class="numero-card" data-tilt data-tilt-strength="8">
+                        <div class="numero-valor" data-contador="8" data-sufixo=" anos">0</div>
+                        <div class="numero-label">Transformando o bairro</div>
+                        <span class="card-brilho"></span>
+                    </div>
+                </div>
+                <div class="rodape-estatisticas">Registros no Mural &middot; Atualizado pelos Moradores.</div>
+            </section>
+
+            <!-- NOSSA HISTÓRIA -->
+            <section class="secao-historia" id="nossa-historia">
+                <div class="historia-imagem anim-entrada anim-de-baixo delay-1">
+                    <figure class="polaroid" data-tilt data-tilt-strength="8">
+                        <img src="../img/img10t.png" alt="Comunidade" onerror="this.src='https://via.placeholder.com/600x400?text=Nossa+Historia'">
+                        <figcaption class="polaroid-legenda">o começo de tudo</figcaption>
+                        <span class="card-brilho"></span>
+                    </figure>
+                </div>
+                <div class="historia-texto anim-entrada anim-de-baixo delay-2">
+                    <h3>Como tudo começou</h3>
+                    <p>O <strong>Voz do Bairro</strong> surgiu de uma necessidade simples: muitos problemas locais (buracos, animais perdidos, falta de iluminação) ficavam sem solução pela ausência de um canal direto entre moradores e poder público.</p>
+                    <p>Percebemos que vizinhos queriam ajudar uns aos outros, mas não sabiam como. Foi então que criamos uma plataforma digital para centralizar as ocorrências de forma organizada, transparente e acessível a todos.</p>
+                    <p>Hoje, somos o ponto de encontro digital da nossa comunidade — um espaço onde a reclamação vira ação, e o vizinho vira parceiro.</p>
+                </div>
+            </section>
+
+            <!-- LINHA DO TEMPO -->
+            <section class="secao-timeline">
+                <h3 class="titulo-secao anim-entrada anim-de-baixo">Nossa Trajetória</h3>
+                <div class="timeline">
+                    <div class="timeline-item anim-entrada anim-de-baixo delay-1">
+                        <div class="timeline-ponto"></div>
+                        <div class="timeline-conteudo" data-tilt data-tilt-strength="8">
+                            <span class="timeline-ano">2018</span>
+                            <h4>O Primeiro Grupo</h4>
+                            <p>Um grupo de WhatsApp com 30 vizinhos unidos para resolver problemas de iluminação na rua principal.</p>
+                            <span class="card-brilho"></span>
+                        </div>
+                    </div>
+                    <div class="timeline-item anim-entrada anim-de-baixo delay-2">
+                        <div class="timeline-ponto"></div>
+                        <div class="timeline-conteudo" data-tilt data-tilt-strength="8">
+                            <span class="timeline-ano">2020</span>
+                            <h4>A Ideia Ganha Forma</h4>
+                            <p>Durante a pandemia, a necessidade de comunicação organizada cresceu e o primeiro protótipo do mural nasceu.</p>
+                            <span class="card-brilho"></span>
+                        </div>
+                    </div>
+                    <div class="timeline-item anim-entrada anim-de-baixo delay-3">
+                        <div class="timeline-ponto"></div>
+                        <div class="timeline-conteudo" data-tilt data-tilt-strength="8">
+                            <span class="timeline-ano">2022</span>
+                            <h4>Plataforma Oficial</h4>
+                            <p>Lançamento da versão oficial do Voz do Bairro, com registro de ocorrências e acompanhamento em tempo real.</p>
+                            <span class="card-brilho"></span>
+                        </div>
+                    </div>
+                    <div class="timeline-item anim-entrada anim-de-baixo delay-4">
+                        <div class="timeline-ponto"></div>
+                        <div class="timeline-conteudo" data-tilt data-tilt-strength="8">
+                            <span class="timeline-ano">2026</span>
+                            <h4>Uma Comunidade Forte</h4>
+                            <p>Mais de 500 vizinhos conectados, centenas de ocorrências resolvidas e uma rede de apoio que não para de crescer.</p>
+                            <span class="card-brilho"></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- MISSÃO, VISÃO E VALORES -->
+            <section class="secao-mvv">
+                <h3 class="titulo-secao anim-entrada anim-de-baixo">Missão, Visão e Valores</h3>
+                <p class="secao-subtitulo anim-entrada anim-de-baixo delay-1">O que nos guia todos os dias.</p>
+                <div class="grid-mvv">
+                    <div class="mvv-card anim-entrada anim-de-baixo delay-1" data-tilt data-tilt-strength="10">
+                        <div class="mvv-icone"><i class="fa-solid fa-bullseye"></i></div>
+                        <h4>Missão</h4>
+                        <p>Dar voz a cada morador, transformando problemas isolados em soluções coletivas por meio da comunicação organizada e transparente.</p>
+                        <span class="card-brilho"></span>
+                    </div>
+                    <div class="mvv-card anim-entrada anim-de-baixo delay-2" data-tilt data-tilt-strength="10">
+                        <div class="mvv-icone"><i class="fa-solid fa-eye"></i></div>
+                        <h4>Visão</h4>
+                        <p>Ser a plataforma de referência em gestão comunitária participativa, inspirando bairros de todo o país a se conectarem.</p>
+                        <span class="card-brilho"></span>
+                    </div>
+                    <div class="mvv-card anim-entrada anim-de-baixo delay-3" data-tilt data-tilt-strength="10">
+                        <div class="mvv-icone"><i class="fa-solid fa-heart"></i></div>
+                        <h4>Valores</h4>
+                        <p>Empatia, transparência, colaboração, segurança e respeito. Acreditamos que vizinhos que se conhecem constroem bairros melhores.</p>
+                        <span class="card-brilho"></span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- COMO FUNCIONA -->
+            <section class="secao-passos">
+                <h3 class="titulo-secao anim-entrada anim-de-baixo">Como Funciona</h3>
+                <p class="secao-subtitulo anim-entrada anim-de-baixo delay-1">Em apenas quatro passos você faz parte da mudança.</p>
+                <div class="grid-passos">
+                    <div class="passo anim-entrada anim-de-baixo delay-1">
+                        <div class="passo-numero">1</div>
+                        <div class="passo-icone"><i class="fa-solid fa-user-plus"></i></div>
+                        <h4>Cadastre-se</h4>
+                        <p>Crie sua conta em segundos e junte-se à comunidade de vizinhos.</p>
+                    </div>
+                    <div class="passo anim-entrada anim-de-baixo delay-2">
+                        <div class="passo-numero">2</div>
+                        <div class="passo-icone"><i class="fa-solid fa-pen-to-square"></i></div>
+                        <h4>Registre</h4>
+                        <p>Descreva a ocorrência com fotos, localização e detalhes importantes.</p>
+                    </div>
+                    <div class="passo anim-entrada anim-de-baixo delay-3">
+                        <div class="passo-numero">3</div>
+                        <div class="passo-icone"><i class="fa-solid fa-clock-rotate-left"></i></div>
+                        <h4>Acompanhe</h4>
+                        <p>Siga o status em tempo real e receba atualizações sobre o andamento.</p>
+                    </div>
+                    <div class="passo anim-entrada anim-de-baixo delay-4">
+                        <div class="passo-numero">4</div>
+                        <div class="passo-icone"><i class="fa-solid fa-check-double"></i></div>
+                        <h4>Resolva</h4>
+                        <p>Veja a ocorrência resolvida e a comunidade mais forte a cada dia.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- O MURAL -->
+            <section class="secao-mural anim-entrada anim-de-baixo">
+                <div class="mural-box">
+                    <div class="mural-conteudo">
+                        <h3><i class="fa-solid fa-map-pin"></i> O que é o Mural do Bairro?</h3>
+                        <p>É o coração da plataforma. Um feed público onde qualquer morador pode registrar ocorrências de forma rápida, com ou sem cadastro, e acompanhar o status em tempo real.</p>
+
+                        <div class="lista-mural">
+                            <div class="item-mural"><i class="fa-solid fa-check-circle"></i> <div><strong>Animais:</strong> Desaparecidos e adoção.</div></div>
+                            <div class="item-mural"><i class="fa-solid fa-check-circle"></i> <div><strong>Segurança:</strong> Assaltos e iluminação.</div></div>
+                            <div class="item-mural"><i class="fa-solid fa-check-circle"></i> <div><strong>Infraestrutura:</strong> Buracos e calçadas.</div></div>
+                            <div class="item-mural"><i class="fa-solid fa-check-circle"></i> <div><strong>SOS Mulher:</strong> Apoio e denúncias.</div></div>
+                            <div class="item-mural"><i class="fa-solid fa-check-circle"></i> <div><strong>Meio Ambiente:</strong> Lixo e poluição.</div></div>
+                            <div class="item-mural"><i class="fa-solid fa-check-circle"></i> <div><strong>Saúde:</strong> Focos de dengue e zoonoses.</div></div>
+                        </div>
+                    </div>
+                    <div class="mural-cta">
+                        <a href="nova-ocorrencia.html" class="btn-abrir-mural" data-magnetic>Registrar Ocorrência &rarr;</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- DEPOIMENTOS -->
+            <section class="secao-depoimentos">
+                <h3 class="titulo-secao anim-entrada anim-de-baixo">O que dizem os vizinhos</h3>
+                <p class="secao-subtitulo anim-entrada anim-de-baixo delay-1">Histórias reais de quem já usou o mural.</p>
+                <div class="grid-depoimentos">
+                    <div class="card-depoimento anim-entrada anim-de-baixo delay-1" data-tilt data-tilt-strength="10">
+                        <div class="depoimento-aspas"><i class="fa-solid fa-quote-left"></i></div>
+                        <p>"O buraco na minha rua tinha dois anos. Registrei no mural e em três semanas estava consertado. Nunca vi isso acontecer tão rápido."</p>
+                        <div class="depoimento-autor">
+                            <div class="depoimento-avatar">MC</div>
+                            <div>
+                                <strong>Maria Clara</strong>
+                                <span>Moradora há 12 anos</span>
+                            </div>
+                        </div>
+                        <span class="card-brilho"></span>
+                    </div>
+                    <div class="card-depoimento anim-entrada anim-de-baixo delay-2" data-tilt data-tilt-strength="10">
+                        <div class="depoimento-aspas"><i class="fa-solid fa-quote-left"></i></div>
+                        <p>"Meu cachorro fugiu e em menos de 1 hora três vizinhos já tinham visto o registro. Encontramos ele no mesmo dia. O mural salvou."</p>
+                        <div class="depoimento-autor">
+                            <div class="depoimento-avatar">JS</div>
+                            <div>
+                                <strong>João Silva</strong>
+                                <span>Tutor do Thor</span>
+                            </div>
+                        </div>
+                        <span class="card-brilho"></span>
+                    </div>
+                    <div class="card-depoimento anim-entrada anim-de-baixo delay-3" data-tilt data-tilt-strength="10">
+                        <div class="depoimento-aspas"><i class="fa-solid fa-quote-left"></i></div>
+                        <p>"Finalmente um lugar onde a comunidade se organiza de verdade. As reuniões de bairro começaram a ter pauta porque as ocorrências ficam registradas."</p>
+                        <div class="depoimento-autor">
+                            <div class="depoimento-avatar">AF</div>
+                            <div>
+                                <strong>Ana Ferreira</strong>
+                                <span>Líder comunitária</span>
+                            </div>
+                        </div>
+                        <span class="card-brilho"></span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- EQUIPE -->
+            <section class="secao-equipe">
+                <h3 class="titulo-secao anim-entrada anim-de-baixo">Quem Cuida do Mural</h3>
+                <p class="secao-subtitulo anim-entrada anim-de-baixo delay-1">Uma equipe pequena, mas apaixonada pelo bairro.</p>
+                <div class="grid-equipe">
+                    <div class="membro anim-entrada anim-de-baixo delay-1">
+                        <div class="membro-foto">
+                            <img src="../img/Marco.jpeg" alt="Marco Aurélio" onerror="this.src='https://via.placeholder.com/200?text=Foto'">
+                        </div>
+                        <h4>Marco Aurélio</h4>
+                        <p>Front-end &amp; Design</p>
+                    </div>
+                    <div class="membro anim-entrada anim-de-baixo delay-2">
+                        <div class="membro-foto">
+                            <img src="../img/Ryan.jpeg" alt="Ryan" onerror="this.src='https://via.placeholder.com/200?text=Foto'">
+                        </div>
+                        <h4>Ryan</h4>
+                        <p>Back-end &amp; Dados</p>
+                    </div>
+                    <div class="membro anim-entrada anim-de-baixo delay-3">
+                        <div class="membro-foto">
+                            <img src="../img/equipe3.jpg" alt="Integrante 3" onerror="this.src='https://via.placeholder.com/200?text=Foto'">
+                        </div>
+                        <h4>Nome Sobrenome</h4>
+                        <p>Conteúdo &amp; Comunidade</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ -->
+            <section class="secao-faq">
+                <h3 class="titulo-secao anim-entrada anim-de-baixo">Perguntas Frequentes</h3>
+                <p class="secao-subtitulo anim-entrada anim-de-baixo delay-1">Tire suas dúvidas sobre a plataforma.</p>
+                <div class="faq-lista">
+                    <div class="faq-item anim-entrada anim-de-baixo delay-1">
+                        <button class="faq-pergunta" type="button" aria-expanded="false">
+                            <span>Preciso me cadastrar para registrar uma ocorrência?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-resposta">
+                            <p>Não! Você pode registrar ocorrências de forma anônima. O cadastro é opcional e serve para acompanhar o histórico e receber notificações sobre o andamento dos seus casos.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item anim-entrada anim-de-baixo delay-2">
+                        <button class="faq-pergunta" type="button" aria-expanded="false">
+                            <span>Quanto tempo leva para uma ocorrência ser resolvida?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-resposta">
+                            <p>Depende do tipo de ocorrência e do órgão responsável. O mural organiza e dá visibilidade aos casos, mas o tempo de resolução varia conforme a complexidade. Você pode acompanhar cada etapa em tempo real.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item anim-entrada anim-de-baixo delay-3">
+                        <button class="faq-pergunta" type="button" aria-expanded="false">
+                            <span>Meus dados estão seguros?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-resposta">
+                            <p>Sim. Seguimos a Lei Geral de Proteção de Dados (LGPD). Seus dados pessoais nunca são exibidos publicamente sem seu consentimento, e você pode solicitar a exclusão a qualquer momento.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item anim-entrada anim-de-baixo delay-4">
+                        <button class="faq-pergunta" type="button" aria-expanded="false">
+                            <span>Posso ajudar de outra forma além de registrar ocorrências?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-resposta">
+                            <p>Claro! Você pode se voluntariar como moderador do mural, participar de mutirões de limpeza, ajudar na divulgação ou contribuir com conteúdo para as notícias locais. Entre em contato conosco para saber mais.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- VOLUNTARIADO -->
+            <section class="secao-voluntario anim-entrada anim-de-baixo">
+                <div class="voluntario-box">
+                    <div class="voluntario-icone"><i class="fa-solid fa-hands-holding-circle"></i></div>
+                    <div class="voluntario-texto">
+                        <h3>Quer fazer parte da equipe?</h3>
+                        <p>Estamos sempre em busca de voluntários apaixonados pelo bairro. Seja para moderar o mural, ajudar em eventos ou contribuir com conteúdo, sua ajuda é bem-vinda.</p>
+                    </div>
+                    <a href="mailto:contato@vozdobairro.com" class="btn-cta" style="animation: none; padding: 13px 28px; font-size: 14px;" data-magnetic>Quero Ajudar</a>
+                </div>
+            </section>
+
+            <!-- CTA FINAL -->
+            <section class="secao-cta anim-entrada anim-de-baixo delay-2">
+                <h3>Sua voz é a mudança que o bairro precisa.</h3>
+                <p>Junte-se a nós. Registre uma ocorrência e ajude a construir uma comunidade melhor.</p>
+                <a href="nova-ocorrencia.html" class="btn-cta" data-magnetic>Começar Agora &rarr;</a>
+            </section>
+
+        </main>
+
+        <!-- RODAPÉ -->
+        <footer class="rodape-escuro">
+            <div class="rodape-conteudo">
+                <div class="rodape-coluna rodape-logo anim-entrada anim-de-baixo delay-1">
+                    <a href="../index.html"><img src="../img/logo.png" alt="Logo Voz do Bairro"></a>
+                    <p>O mural de notícias e ocorrências do seu bairro. Conectando vizinhos, transformando realidades.</p>
+                </div>
+                <div class="rodape-coluna rodape-nav anim-entrada anim-de-baixo delay-2">
+                    <h3>Navegação</h3>
+                    <ul>
+                        <li><a href="ocorrencias.html">Mural de Ocorrências</a></li>
+                        <li><a href="noticias.html">Notícias Locais</a></li>
+                        <li><a href="acompanhamento.html">Acompanhamento</a></li>
+                        <li><a href="sobre.html">Sobre Nós</a></li>
+                    </ul>
+                </div>
+                <div class="rodape-coluna rodape-contato anim-entrada anim-de-baixo delay-3">
+                    <h3>Fale Conosco</h3>
+                    <ul>
+                        <li class="item-contato">
+                            <div class="icone-wrapper"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></div>
+                            <a href="mailto:contato@vozdobairro.com">contato@vozdobairro.com</a>
+                        </li>
+                        <li class="item-contato">
+                            <div class="icone-wrapper"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></div>
+                            <a href="https://instagram.com" target="_blank">@vozdobairro</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="rodape-base anim-entrada anim-de-baixo delay-4">
+                <div class="rodape-base-linha"></div>
+                <div class="rodape-base-texto">
+                    <p>&copy; 2026 Voz do Bairro. Todos os direitos reservados.</p>
+                    <p>Desenvolvido com ❤️ por <strong>Marco Aurélio &amp; Ryan</strong></p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="../js/sobre.js?v=6"></script>
+</body>
+</html>
