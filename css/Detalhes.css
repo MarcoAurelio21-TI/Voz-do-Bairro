@@ -1,0 +1,697 @@
+/* =========================================
+   RESET E BASE
+   ========================================= */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+    --cor-primaria: #c22424;
+    --cor-primaria-escura: #9e1b1b;
+    --cor-texto: #334155;
+    --cor-texto-claro: #64748b;
+    --cor-borda: #e2e8f0;
+    --cor-fundo-claro: #f8fafc;
+    --ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body {
+    background-color: #f1f5f9;
+    font-family: 'Roboto', sans-serif;
+    color: var(--cor-texto);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 20px 0 20px;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+.janela-sistema {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 1100px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    padding: 0 40px 40px;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 50px;
+}
+
+/* =========================================
+   ANIMAÇÕES
+   ========================================= */
+@keyframes fadeUp {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes zoomIn {
+    0% { transform: scale(0.95); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes pulseButton {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(194,36,36,0.2); }
+    50% { box-shadow: 0 0 0 8px rgba(194,36,36,0); }
+}
+
+@keyframes flutuarLogoRodape {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+}
+
+.anim-fade-up {
+    opacity: 0;
+    animation: fadeUp 0.7s var(--ease-out-back) forwards;
+}
+
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+
+/* =========================================
+   CABEÇALHO
+   ========================================= */
+.topo {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Agora centraliza a logo, pois não tem mais o btn esquerdo */
+    padding: 25px 0 20px;
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+.logo-central {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-central img { width: 45px; height: 45px; object-fit: contain; }
+
+.logo-central h1 {
+    font-family: 'Merriweather', serif;
+    font-size: 24px;
+    font-weight: 900;
+    color: #0f172a;
+}
+
+/* =========================================
+   CONTEÚDO CENTRAL (DETALHES)
+   ========================================= */
+.conteudo-detalhe {
+    padding: 40px 0 20px;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+/* Breadcrumb (Navegação) */
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--cor-texto-claro);
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.breadcrumb a {
+    color: var(--cor-texto-claro);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.breadcrumb a:hover { color: var(--cor-primaria); }
+.breadcrumb span.separador { font-size: 10px; }
+.breadcrumb .atual { color: var(--cor-primaria); font-weight: 500; }
+
+/* Imagem de Destaque */
+.imagem-destaque {
+    width: 100%;
+    height: 400px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    background-color: #e2e8f0;
+    animation: zoomIn 0.8s var(--ease-out-expo) forwards;
+}
+
+.imagem-destaque img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s var(--ease-out-expo);
+}
+
+.imagem-destaque:hover img {
+    transform: scale(1.03);
+}
+
+/* Cabeçalho da Notícia */
+.cabecalho-noticia {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+/* Tag de Categoria com Ícone */
+.tag-categoria {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 8px 18px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.cabecalho-noticia h1 {
+    font-family: 'Merriweather', serif;
+    font-size: 36px;
+    font-weight: 900;
+    color: #0f172a;
+    line-height: 1.25;
+    margin-bottom: 20px;
+    display: block;
+}
+
+/* Barra de Meta Informações */
+.meta-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 15px 0;
+    border-top: 1px solid var(--cor-borda);
+    border-bottom: 1px solid var(--cor-borda);
+    margin-bottom: 30px;
+}
+
+.meta-info span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    color: var(--cor-texto-claro);
+}
+
+.meta-info span i { color: var(--cor-primaria); font-size: 14px; }
+
+/* =========================================
+   FICHA PRINCIPAL — 5 CAMPOS PADRONIZADOS
+   ========================================= */
+.ficha-principal {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+    border: 1px solid var(--cor-borda);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+}
+
+.ficha-linha {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 14px;
+    background: #fff;
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ficha-linha:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+}
+
+.ficha-icone {
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+}
+
+.ficha-conteudo {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.ficha-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    font-weight: 700;
+    color: var(--cor-texto-claro);
+}
+
+.ficha-valor {
+    font-size: 14px;
+    font-weight: 600;
+    color: #0f172a;
+    line-height: 1.4;
+    word-break: break-word;
+}
+
+/* =========================================
+   CORPO DA NOTÍCIA — TÍTULO E TEXTO
+   ========================================= */
+.corpo-noticia {
+    background: #fff;
+    border-left: 4px solid var(--cor-primaria);
+    border-radius: 0 8px 8px 0;
+    padding: 22px 26px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+
+.corpo-titulo {
+    font-family: 'Merriweather', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.corpo-titulo i {
+    color: var(--cor-primaria);
+    font-size: 15px;
+}
+
+.corpo-noticia .lead {
+    font-size: 16px;
+    line-height: 1.85;
+    color: #334155;
+    white-space: pre-wrap;
+    margin: 0;
+}
+
+/* Dropcap apenas no lead */
+.corpo-noticia .lead::first-letter {
+    font-family: 'Merriweather', serif;
+    font-size: 44px;
+    font-weight: 900;
+    float: left;
+    line-height: 0.85;
+    margin: 6px 8px 0 0;
+    color: var(--cor-primaria);
+}
+
+/* =========================================
+   FICHA TÉCNICA EXTRA — LISTA COM ÍCONES
+   ========================================= */
+.ficha-tecnica {
+    background: #fff;
+    border: 1px solid var(--cor-borda);
+    border-radius: 12px;
+    padding: 22px 26px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+
+.ficha-tecnica h3 {
+    font-family: 'Merriweather', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+.ficha-tecnica h3 i { color: var(--cor-primaria); }
+
+.ficha-tecnica ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ficha-tecnica ul li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 14px;
+    color: #334155;
+    line-height: 1.5;
+    padding: 8px 0;
+    border-bottom: 1px dashed #e2e8f0;
+}
+
+.ficha-tecnica ul li:last-child { border-bottom: none; }
+
+.ficha-tecnica ul li i {
+    color: var(--cor-primaria);
+    font-size: 14px;
+    margin-top: 3px;
+    flex-shrink: 0;
+    width: 18px;
+    text-align: center;
+}
+
+.ficha-tecnica ul li strong {
+    color: #0f172a;
+    font-weight: 600;
+}
+
+/* =========================================
+   COMPARTILHAMENTO E BOTÕES
+   ========================================= */
+.acoes-noticia {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 20px 0;
+    border-top: 1px solid var(--cor-borda);
+    margin-top: 10px;
+}
+
+.acoes-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--cor-texto-claro);
+    margin-right: 8px;
+}
+
+.btn-acao {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #fff;
+    transition: transform 0.2s var(--ease-out-back), box-shadow 0.2s;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-acao:hover { transform: translateY(-3px) scale(1.1); }
+.btn-acao.whatsapp { background-color: #25d366; }
+.btn-acao.facebook { background-color: #1877f2; }
+.btn-acao.copiar { background-color: #64748b; }
+.btn-acao.whatsapp:hover { box-shadow: 0 6px 14px rgba(37,211,102,0.4); }
+.btn-acao.facebook:hover { box-shadow: 0 6px 14px rgba(24,119,242,0.4); }
+.btn-acao.copiar:hover { box-shadow: 0 6px 14px rgba(100,116,139,0.4); }
+.btn-acao.copiado { background-color: #22c55e !important; }
+
+.voltar-final {
+    margin-top: 30px;
+    padding-top: 25px;
+    border-top: 1px solid var(--cor-borda);
+}
+
+.btn-voltar-final {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--cor-primaria);
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 12px 24px;
+    border-radius: 4px;
+    transition: all 0.25s ease;
+    animation: pulseButton 2.5s infinite;
+}
+
+.btn-voltar-final:hover {
+    background-color: var(--cor-primaria-escura);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(194,36,36,0.3);
+}
+
+/* =========================================
+   MENSAGEM DE ERRO
+   ========================================= */
+.erro-container {
+    text-align: center;
+    padding: 60px 20px;
+}
+.erro-container h2 {
+    font-family: 'Merriweather', serif;
+    font-size: 24px;
+    color: #0f172a;
+    margin-bottom: 15px;
+}
+.erro-container p { color: #64748b; margin-bottom: 25px; }
+
+/* =========================================
+   RODAPÉ PREMIUM
+   ========================================= */
+.rodape-escuro {
+    background-color: #09090b;
+    background-image: 
+        radial-gradient(circle at 50% 0%, rgba(194, 36, 36, 0.05) 0%, transparent 50%),
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 100% 100%, 30px 30px, 30px 30px;
+    width: 100%;
+    padding: 70px 20px 30px 20px;
+    border-top: 2px solid #c22424;
+    position: relative;
+    z-index: 10;
+}
+
+.rodape-conteudo {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 60px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.rodape-coluna {
+    display: flex;
+    flex-direction: column;
+}
+
+.rodape-logo a {
+    display: inline-block;
+    margin-bottom: 25px;
+    animation: flutuarLogoRodape 4s ease-in-out infinite;
+    transition: transform 0.3s var(--ease-out-back);
+}
+
+.rodape-logo a:hover {
+    animation-play-state: paused;
+    transform: scale(1.05);
+}
+
+.rodape-logo img {
+    width: 100%;
+    max-width: 260px;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
+}
+
+.rodape-logo p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    color: #a1a1aa;
+    line-height: 1.7;
+    max-width: 300px;
+}
+
+.rodape-coluna h3 {
+    font-family: 'Merriweather', serif;
+    font-size: 15px;
+    color: #ffffff;
+    font-weight: 700;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.rodape-coluna h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background-color: #c22424;
+    border-radius: 2px;
+}
+
+.rodape-nav ul, .rodape-contato ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.rodape-nav a {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: #d4d4d8;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.rodape-nav a::before {
+    content: '';
+    width: 0;
+    height: 1px;
+    background-color: #c22424;
+    transition: width 0.3s var(--ease-out-expo);
+}
+
+.rodape-nav a:hover {
+    color: #ffffff;
+    transform: translateX(4px);
+}
+
+.rodape-nav a:hover::before {
+    width: 12px;
+}
+
+.rodape-contato li.item-contato {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+
+.icone-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #18181b;
+    border: 1px solid #27272a;
+    transition: all 0.3s var(--ease-out-back);
+}
+
+.rodape-contato svg {
+    color: #a1a1aa;
+    transition: color 0.3s ease;
+}
+
+.rodape-contato li.item-contato:hover .icone-wrapper {
+    background-color: #c22424;
+    border-color: #c22424;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(194, 36, 36, 0.3);
+}
+
+.rodape-contato li.item-contato:hover svg {
+    color: #ffffff;
+}
+
+.rodape-contato a {
+    color: #d4d4d8;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.rodape-contato a:hover {
+    color: #ffffff;
+}
+
+.rodape-base {
+    max-width: 1100px;
+    margin: 60px auto 0 auto;
+}
+
+.rodape-base-linha {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #3f3f46, transparent);
+    margin-bottom: 25px;
+}
+
+.rodape-base-texto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    color: #71717a;
+}
+
+.rodape-base-texto strong {
+    color: #e4e4e7;
+    font-weight: 500;
+}
+
+/* =========================================
+   RESPONSIVO
+   ========================================= */
+@media (max-width: 850px) {
+    .janela-sistema { padding: 0 20px 20px; }
+    .topo { flex-direction: column; gap: 15px; }
+    .cabecalho-noticia h1 { font-size: 26px; }
+    .imagem-destaque { height: 250px; }
+    .ficha-principal { grid-template-columns: 1fr; padding: 18px; }
+    .corpo-noticia { padding: 18px 20px; }
+    .corpo-noticia .lead::first-letter { font-size: 38px; }
+    .ficha-tecnica { padding: 18px 20px; }
+    .acoes-noticia { flex-direction: row; }
+
+    .rodape-escuro {
+        padding: 50px 20px 20px 20px;
+    }
+    .rodape-conteudo {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+    .rodape-logo a { display: inline-block; }
+    .rodape-logo p { margin: 0 auto; }
+    .rodape-coluna { align-items: center; }
+    .rodape-coluna h3::after { left: 50%; transform: translateX(-50%); }
+    .rodape-nav a::before { display: none; }
+    .rodape-base-texto {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    .rodape-contato li.item-contato {
+        justify-content: center;
+    }
+}
